@@ -11,9 +11,10 @@ RSpec.describe Board do
 
   it "can create a 7 column by 6 height board from an array" do
     board = Board.new()
-    # require 'pry':binding.pry
-    board.create_board
 
-    expect(board).to eq(board = [[nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil]])
+    board.create_board
+    # require 'pry':binding.pry
+
+    expect(board.create_board).to eq([[nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil]])
   end
 end
