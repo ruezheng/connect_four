@@ -8,7 +8,7 @@ class Board
 
   def create_board
     board = []
-    @column.times do
+    @height.times do
       board << Array.new(@column)
       # board << Array.new(column{Array.new(height)})
     end
