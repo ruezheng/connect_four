@@ -13,8 +13,8 @@ RSpec.describe Board do
     board = Board.new()
 
     board.create_board
-    # require 'pry':binding.pry
-
+    require 'pry':binding.pry
+    
     expect(board.create_board).to eq([[nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil], [nil, nil, nil, nil, nil, nil, nil]])
   end
 end
