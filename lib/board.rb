@@ -7,12 +7,29 @@ class Board
   end
 
   def create_board
-    board = []
-    @column.times do
-      board << Array.new(@column)
-      # board << Array.new(column{Array.new(height)})
-    end
-    board
+    board = {
+    :A => %w[. . . . . .],
+    :B => %w[. . . . . .],
+    :C => %w[. . . . . .],
+    :D => %w[. . . . . .],
+    :E => %w[. . . . . .],
+    :F => %w[. . . . . .],
+    :G => %w[. . . . . .]
+    }
   end
 
+  def print_board
+    puts "Welcome to the game of connect 4!".delete('"')
+    columns = ["ABCDEFG"].join
+    # columns.keys.each do |column|
+    puts columns.delete('"')
+    6.times do
+      puts %w[. . . . . . .].join
+    end
+    require "pry";binding.pry
+  end
 end
+    # board = []
+    # @height.times do
+    #   board << Array.new(@column)
+    #   # board << Array.new(column{Array.new(height)})
