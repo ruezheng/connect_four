@@ -1,9 +1,8 @@
-class Game
+class Turn
   attr_reader :player, :computer
 
   def initialize(player, computer)
-    @player = player
-    @computer = computer
+    @piece = piece
   end
 
 end

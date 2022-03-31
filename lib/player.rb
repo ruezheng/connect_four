@@ -1,12 +1,13 @@
 class Player
   attr_reader :color
 
-  def initialize(color)
-    @color = color
+  def initialize(piece)
+    @player = player
+    @computer = computer
   end
 
-  # def turn
-  
+  def
+
 
 end
 
