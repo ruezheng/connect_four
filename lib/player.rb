@@ -6,9 +6,10 @@ class Player
   attr_reader :piece
 
   def initialize(piece)
-    human_player = 'X' 
-    cpu = 'O'
+    @human_player = piece
+    @computer_player = piece
   end
+
   # user input
 
   def computer

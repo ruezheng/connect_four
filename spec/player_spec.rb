@@ -5,8 +5,8 @@ require './lib/player'
 RSpec.describe Player do
 
   before :each do
-    @player = Player.new('X')
-    @computer = Player.new('O')
+    @human_player = Player.new('X')
+    @computer_player = Player.new('O')
   end
 
   it "exists" do

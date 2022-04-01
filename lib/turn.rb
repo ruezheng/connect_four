@@ -1,9 +1,9 @@
 # Player places a piece (X)
 
 class Turn
-  attr_reader :player, :computer
+  attr_reader :
 
-  def initialize(player, computer)
+  def initialize(piece)
     @piece = piece
   end
 
