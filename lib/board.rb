@@ -1,35 +1,32 @@
 class Board
   attr_reader :column, :height, :place_holder
-  def initialize(column = 7, height = 6)
-    @height = height
+
+  def initialize
+    @height = 6
     @column = column
     @board = create_board
   end
 
   def create_board
     board = {
-    :A => %w[. . . . . .],
-    :B => %w[. . . . . .],
-    :C => %w[. . . . . .],
-    :D => %w[. . . . . .],
-    :E => %w[. . . . . .],
-    :F => %w[. . . . . .],
-    :G => %w[. . . . . .]
+    :A => %w[. . . . . . .],
+    :B => %w[. . . . . . .],
+    :C => %w[. . . . . . .],
+    :D => %w[. . . . . . .],
+    :E => %w[. . . . . . .],
+    :F => %w[. . . . . . .],
     }
   end
 
   def print_board
-    puts "Welcome to the game of connect 4!".delete('"')
+    puts "Welcome to the game of Connect 4!".delete('"')
     columns = ["ABCDEFG"].join
-    # columns.keys.each do |column|
     puts columns.delete('"')
-    6.times do
-      puts %w[. . . . . . .].join
-    end
-    require "pry";binding.pry
+    puts @board[:A].join
+    puts @board[:B].join
+    puts @board[:C].join
+    puts @board[:D].join
+    puts @board[:E].join
+    puts @board[:F].join
   end
 end
-    # board = []
-    # @height.times do
-    #   board << Array.new(@column)
-    #   # board << Array.new(column{Array.new(height)})

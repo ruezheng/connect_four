@@ -1,18 +1,17 @@
+# Create 2 players: Computer and Player
+
+# Assign a piece to each Player
+
 class Player
-  attr_reader :color
+  attr_reader :piece
 
   def initialize(piece)
-    @player = player
-    @computer = computer
+    human_player = 'X' 
+    cpu = 'O'
+  end
+  # user input
+
+  def computer
   end
 
-  def
-
-
 end
-
-
-# class ComputerPlayer
-#   attr_reader : color
-#
-# end
