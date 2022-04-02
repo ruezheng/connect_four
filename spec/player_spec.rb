@@ -1,25 +1,42 @@
 require 'rspec'
 require 'pry'
+require './lib/board'
 require './lib/player'
 
 RSpec.describe Player do
 
-  before :each do
-    @human_player = Player.new('X')
-    @computer_player = Player.new('O')
-  end
+  # before :each do
+  #   @player = Player.new('X')
+  #   @computer = Player.new('O')
+  # end
 
   it "exists" do
-    expect(@player).to be_an_instance_of(Player)
-    expect(@computer).to be_an_instance_of(Player)
+    player = Player.new('X')
+    computer = Player.new('O')
+
+    expect(player).to be_an_instance_of Player
+    expect(computer).to be_an_instance_of Player
   end
 
-  it "has a winner" do
-    expect(@player.winner?).to eq(@true)
+  it "has a piece assigned to each player" do
+    player = Player.new('X')
+    computer = Player.new('O')
+
+    expect(player.piece).to eq 'X'
+    expect(computer.piece).to eq 'O'
   end
 
-  it "has a winner" do
-    expect(@player.winner?).to eq(@false)
-  end
+  # xit "has a winner or is a draw" do
+  #
+  #
+  #   expect(@player.winner?).to eq(@true)
+  #
+  #
+  #   expect(@computer.winner?).to eq(@false)
+  # end
+  #
+  # xit "" do
+  #   expect(@player.winner?).to eq(@false)
+  # end
 
 end

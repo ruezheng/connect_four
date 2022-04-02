@@ -6,13 +6,21 @@ class Player
   attr_reader :piece
 
   def initialize(piece)
-    @human_player = piece
-    @computer_player = piece
+    @piece = piece
   end
 
-  # user input
-
-  def computer
-  end
+  # def winner?
+  #   if @player == connected.connect_four
+  #     true
+  #   elsif @computer == connected.connect_four
+  #     true
+  #   else
+  #     false
+  #   end
+  # end
+  #
+  # def computer
+  #   require "pry"; binding.pry
+  # end
 
 end
