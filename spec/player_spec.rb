@@ -11,31 +11,32 @@ RSpec.describe Player do
   # end
 
   it "exists" do
-    @player = Player.new('X')
-    @computer = Player.new('O')
+    player = Player.new('X')
+    computer = Player.new('O')
 
-    expect(player).to be_an_instance_of(Player)
-    expect(computer).to be_an_instance_of(Player)
+    expect(player).to be_an_instance_of Player
+    expect(computer).to be_an_instance_of Player
   end
 
-#   it "has a piece assigned to player and computer" do
-#     @player = Player.new('X')
-#     @computer = Player.new('O')
-#
-#     expect(player.)
-#   end
-#
-#   xit "has a winner or is a draw" do
-#
-#
-#     expect(@player.winner?).to eq(@true)
-#
-#
-#     expect(@computer.winner?).to eq(@false)
-#   end
-#
-#   xit "" do
-#     expect(@player.winner?).to eq(@false)
-#   end
-#
-# end
+  it "has a piece assigned to each player" do
+    player = Player.new('X')
+    computer = Player.new('O')
+
+    expect(player.piece).to eq 'X'
+    expect(computer.piece).to eq 'O'
+  end
+
+  # xit "has a winner or is a draw" do
+  #
+  #
+  #   expect(@player.winner?).to eq(@true)
+  #
+  #
+  #   expect(@computer.winner?).to eq(@false)
+  # end
+  #
+  # xit "" do
+  #   expect(@player.winner?).to eq(@false)
+  # end
+
+end
