@@ -1,19 +1,18 @@
 require 'rspec'
 require 'pry'
-require './lib/game'
+require './lib/turn'
+require './lib/player'
 
-RSpec.describe Game do
-  
+RSpec.describe Turn do
+
   before :each do
-    @game = @Game.new(player)
-    @player = @Player.new('Fez')
-    # @computer = @Computer.new(Computer)
+    @turn = Turn.new()
   end
 
   it "exists" do
-    expect(@game.player).to be_an_instance_of(@Game)
+
+    expect(@turn).to be_an_instance_of(Turn)
   end
 
-
-
+  it "can take user input to r"
 end
