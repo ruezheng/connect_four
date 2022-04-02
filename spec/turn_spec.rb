@@ -10,9 +10,10 @@ RSpec.describe Turn do
   end
 
   it "exists" do
-
     expect(@turn).to be_an_instance_of(Turn)
   end
 
-  it "can take user input to r"
+  it "can take user_input"
+    expect(turn.user_input).to eq()
+  end
 end
