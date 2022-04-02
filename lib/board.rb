@@ -1,9 +1,7 @@
 class Board
-  attr_reader :column, :height, :place_holder, :board
+  attr_reader :place_holder, :board
 
   def initialize
-    @height = 6
-    @column = column
     @board = create_board
   end
 
@@ -22,12 +20,12 @@ class Board
     puts "Please input letters A - G and press return to place piece!".delete('"')
     columns = ["ABCDEFG"].join
     puts columns.delete('"')
-    puts @board[:row6].join
-    puts @board[:row5].join
-    puts @board[:row4].join
-    puts @board[:row3].join
-    puts @board[:row2].join
-    puts @board[:row1].join
+    puts @set_board[:row6].join
+    puts @set_board[:row5].join
+    puts @set_board[:row4].join
+    puts @set_board[:row3].join
+    puts @set_board[:row2].join
+    puts @set_board[:row1].join
   end
 
   def player_input(key, index)

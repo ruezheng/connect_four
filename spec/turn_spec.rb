@@ -13,7 +13,9 @@ RSpec.describe Turn do
     expect(@turn).to be_an_instance_of(Turn)
   end
 
-  it "can take user_input"
-    expect(turn.user_input).to eq()
+  it "can take user input to change the board" do
+    @turn.takes_turn.user_input
+
+    expect(@set_board.board[:row1[0]]).to eq("X")
   end
 end

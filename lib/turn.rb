@@ -1,11 +1,9 @@
 # Player places a piece (X)
 
 class Turn
-  attr_reader :board, :turn, :piece, :player
+  attr_reader :board, :turn
 
   def initialize
-    @piece = piece
-    @player = player
     @turn = turn
   end
 
@@ -15,10 +13,10 @@ class Turn
 
       if @user_input == "A"
 
-        if @board[:row1][0] == "."
+        if @board.board[:row1][0] == "."
           @board[:row1][0] = 'X'
           @board.print_board
-          break 
+          break
           #do we need these, or would the code quit here
         elsif @board[:row2][0] == "."
           @board[:row2][0] = 'X'
