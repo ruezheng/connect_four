@@ -1,5 +1,5 @@
 class Board
-  attr_reader :column, :height, :place_holder
+  attr_reader :column, :height, :place_holder, :board
 
   def initialize
     @height = 6
@@ -8,25 +8,33 @@ class Board
   end
 
   def create_board
-    board = {
-    :A => %w[. . . . . . .],
-    :B => %w[. . . . . . .],
-    :C => %w[. . . . . . .],
-    :D => %w[. . . . . . .],
-    :E => %w[. . . . . . .],
-    :F => %w[. . . . . . .],
+    @set_board = {
+    :row6 => %w[. . . . . . .],
+    :row5 => %w[. . . . . . .],
+    :row4 => %w[. . . . . . .],
+    :row3 => %w[. . . . . . .],
+    :row2 => %w[. . . . . . .],
+    :row1 => %w[. . . . . . .],
     }
   end
 
   def print_board
-    puts "Welcome to the game of Connect 4!".delete('"')
+    puts "Please input letters A - G and press return to place piece!".delete('"')
     columns = ["ABCDEFG"].join
     puts columns.delete('"')
-    puts @board[:A].join
-    puts @board[:B].join
-    puts @board[:C].join
-    puts @board[:D].join
-    puts @board[:E].join
-    puts @board[:F].join
+    puts @board[:row6].join
+    puts @board[:row5].join
+    puts @board[:row4].join
+    puts @board[:row3].join
+    puts @board[:row2].join
+    puts @board[:row1].join
+  end
+
+  def player_input(key, index)
+    @set_board[key][index] = "X"
+  end
+
+  def computer_input(key, index)
+    @set_board[key][index] = "O"
   end
 end
