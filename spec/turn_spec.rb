@@ -2,11 +2,13 @@ require 'rspec'
 require 'pry'
 require './lib/turn'
 require './lib/player'
+require './lib/board'
 
 RSpec.describe Turn do
 
   before :each do
     @turn = Turn.new()
+    @set_board = Board.new
   end
 
   it "exists" do
@@ -14,8 +16,14 @@ RSpec.describe Turn do
   end
 
   it "can take user input to change the board" do
-    @turn.takes_turn.user_input
+    # binding.pry
+    # @turn.take_turn.user_input("A")
+    @user_input = "A"
+    @turn.take_turn
+    @turn.take_turn
+    binding.pry
+    expect(@set_board.board[:row1][0]).to eq("X")
+    expect(@set_board.board[:row2][0]).to eq("X")
 
-    expect(@set_board.board[:row1[0]]).to eq("X")
   end
 end

@@ -5,7 +5,7 @@ require './lib/board.rb'
 RSpec.describe Board do
 
   before :each do
-    @set_board = Board.new()
+    @set_board = Board.new
   end
 
   it "exists" do
@@ -24,5 +24,6 @@ RSpec.describe Board do
     expect(@set_board.board[:row1][0]).to eq("X")
     expect(@set_board.board[:row1][1]).to eq("O")
     expect(@set_board.board[:row2][1]).to eq("X")
+    # binding.pry
   end
 end

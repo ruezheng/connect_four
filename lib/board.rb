@@ -2,10 +2,10 @@ class Board
   attr_reader :place_holder, :board
 
   def initialize
-    @board = create_board
+    @board = set_board
   end
 
-  def create_board
+  def set_board
     @set_board = {
     :row6 => %w[. . . . . . .],
     :row5 => %w[. . . . . . .],
