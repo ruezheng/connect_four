@@ -13,3 +13,7 @@ while true
 end
 
 # game = Game.new
+
+# game.start
+
+# press q to quit game
