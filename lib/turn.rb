@@ -1,48 +1,46 @@
 # Player places a piece (X)
 
 class Turn
-  attr_reader :board, :turn
+  attr_accessor :turn, :board
 
-  def initialize
-    @turn = turn
+  def initialize(board)
+    @board = board
   end
 
-  def takes_turn
-    loop do
-      @user_input = STDIN.gets.chomp.upcase
+  def player_input
+    return STDIN.gets.chomp.upcase
+  end
 
-      if @user_input == "A"
+  def place_piece
+    if player_input == "A"
+      
+      if @board.board[:row1][0] == "."
+        @board.board[:row1][0] = 'X'
+        @board.print_board
 
-        if @board.board[:row1][0] == "."
-          @board[:row1][0] = 'X'
-          @board.print_board
-          break
-          #do we need these, or would the code quit here
-        elsif @board[:row2][0] == "."
-          @board[:row2][0] = 'X'
-          @board.print_board
-          break
-        elsif @board[:row3][0] == "."
-          @board[:row3][0] = 'X'
-          @board.print_board
-          break
-        elsif @board[:row4][0] == "."
-          @board[:row4][0] = 'X'
-          @board.print_board
-          break
-        elsif @board[:row5][0] == "."
-          @board[:row5][0] = 'X'
-          @board.print_board
-          break
-        elsif @board[:row6][0] == "."
-          @board[:row6][0] = 'X'
-          @board.print_board
-          break
-        else
-          "Column is full"
-        end
+      elsif @board.board[:row2][0] == "."
+        @board.board[:row2][0] = 'X'
+        @board.print_board
+
+      elsif @board.board[:row3][0] == "."
+        @board.board[:row3][0] = 'X'
+        @board.print_board
+
+      elsif @board.board[:row4][0] == "."
+        @board.board[:row4][0] = 'X'
+        @board.print_board
+
+      elsif @board.board[:row5][0] == "."
+        @board.board[:row5][0] = 'X'
+        @board.print_board
+
+      elsif @board.board[:row6][0] == "."
+        @board.board[:row6][0] = 'X'
+        @board.print_board
+
+      else
+        "Column is full"
       end
     end
   end
-
 end
