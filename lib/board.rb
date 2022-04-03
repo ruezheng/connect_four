@@ -23,7 +23,7 @@ class Board
     puts @board[:row2].join
     puts @board[:row1].join
   end
-  #
+
   # def player_input(key, index)
   #   @board[key][index] = "X"
   # end
