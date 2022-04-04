@@ -25,8 +25,7 @@ RSpec.describe Turn do
   end
 
   it "computer can place a piece 'O' in available spot" do
-    @turn.computer_piece("F")
-
-    expect(@board.board[:row1][5]).to eq "O"
+    @turn.computer_piece("B")
+    expect(@board.board[:row1][1]).to eq "O"
   end
 end

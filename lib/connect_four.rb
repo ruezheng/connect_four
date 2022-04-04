@@ -13,7 +13,8 @@ while true
   input = turn.player_input.upcase
   turn.player_piece(input)
 
-  turn.computer_piece(input)
+  computer_input = turn.computer_input
+  turn.computer_piece
 end
 
 

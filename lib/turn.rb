@@ -10,7 +10,12 @@ class Turn
   end
 
   def player_piece(input)
-    # input = player_input.upcase
+    input = player_input.upcase
+
+    until (input == "A" or input == "B" or input == "C" or input == "D" or input == "E" or input == "F" or input == "G")
+        puts "Please enter a 1 or 2."
+        # return STDIN.gets.chomp
+    end
 
     if input == "A"
       if @board.board[:row1][0] == "."
@@ -219,6 +224,10 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
+
+    elsif input
+
+      puts "We told you A-G. Try again!"
     end
   end
 
@@ -226,10 +235,9 @@ class Turn
     @possible_input = (%w(A B C D E F G)).sample
   end
 
-  def computer_piece(input)
-    input = @possible_input
+  def computer_piece
 
-    if input == "A"
+    if computer_input == "A"
       if @board.board[:row1][0] == "."
         @board.board[:row1][0] = "O"
         @board.print_board
@@ -258,7 +266,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "B"
+    elsif computer_input == "B"
       if @board.board[:row1][1] == "."
         @board.board[:row1][1] = "O"
         @board.print_board
@@ -287,7 +295,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "C"
+    elsif computer_input == "C"
 
       if @board.board[:row1][2] == "."
         @board.board[:row1][2] = "O"
@@ -317,7 +325,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "D"
+    elsif computer_input == "D"
 
       if @board.board[:row1][3] == "."
         @board.board[:row1][3] = "O"
@@ -347,7 +355,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "E"
+    elsif computer_input == "E"
 
       if @board.board[:row1][4] == "."
         @board.board[:row1][4] = 'X'
@@ -377,7 +385,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "F"
+    elsif computer_input == "F"
 
       if @board.board[:row1][5] == "."
         @board.board[:row1][5] = "O"
@@ -407,7 +415,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif input == "G"
+    elsif computer_input == "G"
 
       if @board.board[:row1][6] == "."
         @board.board[:row1][6] = "O"
