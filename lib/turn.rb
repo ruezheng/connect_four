@@ -80,7 +80,7 @@ class Turn
     if player_input == "C"
 
       if @board.board[:row1][2] == "."
-        @board.board[:row2][2] = 'X'
+        @board.board[:row1][2] = 'X'
         @board.print_board
 
       elsif @board.board[:row2][2] == "."
@@ -141,7 +141,7 @@ class Turn
 
     if player_input == "E"
 
-      if @board.board[:row1[4] == "."
+      if @board.board[:row1][4] == "."
         @board.board[:row1][4] = 'X'
         @board.print_board
 
@@ -230,8 +230,6 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
-
     end
   end
 end
