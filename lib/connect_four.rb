@@ -10,11 +10,18 @@ puts board.print_board
 
 while true
   turn = Turn.new(board)
-  turn.place_piece
+  input = turn.player_input.upcase
+  turn.player_piece(input)
+
+  turn.computer_piece(input)
+end
+
+
+
+
   # game.has_won?
   # turn = Turn.new(board)
   # turn.computer_place_piece
-end
 
 # game = Game.new
 

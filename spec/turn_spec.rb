@@ -11,24 +11,22 @@ RSpec.describe Turn do
   end
 
   it "exists" do
-    expect(@turn).to be_an_instance_of(Turn)
+    expect(@turn).to be_an_instance_of Turn
   end
 
   it "can take player input" do
-    input = @turn.player_input # We put this here because when we put input in 'before:each', it asks for player input twice instead of once.
+    @turn.player_piece("A")
 
-    expect(input).to eq("A")
+    expect(@board.board[:row1][0]).to eq "X"
   end
 
-  xit "can replace availble spot with player's piece " do
-    input = @turn.player_input
-
-    expect().to eq("A")
+  it "will return only letters A-G" do
+    expect(@turn.computer_input).to eq("A").or eq("B").or eq("C").or eq("D").or eq("E").or eq("F").or eq("G")
   end
 
-  xit "can check in all columns respond to player input" do
-    input = @turn.player_input
+  it "computer can place a piece 'O' in available spot" do
+    @turn.computer_piece("F")
 
-    expect()
+    expect(@board.board[:row1][5]).to eq "O"
   end
 end
