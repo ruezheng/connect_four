@@ -1,6 +1,8 @@
 require 'pry'
 require 'rspec'
 require './lib/board.rb'
+require './lib/turn.rb'
+
 
 RSpec.describe Board do
 
@@ -17,10 +19,10 @@ RSpec.describe Board do
   end
 
   it "can place pieces on the board" do
-    require "pry"; binding.pry
     @board.player_input(:row1, 0)
     @board.computer_input(:row1, 1)
     @board.player_input(:row2, 1)
+
     expect(@board.board[:row1][0]).to eq("X")
     expect(@board.board[:row1][1]).to eq("O")
     expect(@board.board[:row2][1]).to eq("X")

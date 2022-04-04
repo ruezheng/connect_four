@@ -1,6 +1,7 @@
 class Board
   attr_reader :place_holder, :board, :set_board
 
+
   def initialize
     @board = {
     row6: %w[. . . . . . .],
@@ -13,7 +14,7 @@ class Board
   end
 
   def print_board
-    puts "Please input letters A - G and press return to place piece!".delete('"')
+    puts "Please input letters A - G and press 'return' to place piece!".delete('"')
     columns = ["ABCDEFG"].join
     puts columns.delete('"')
     puts @board[:row6].join
@@ -23,15 +24,12 @@ class Board
     puts @board[:row2].join
     puts @board[:row1].join
   end
+
+  def player_input(key, index)
+    @board[key][index] = "X"
+  end
+
+  def computer_input(key, index)
+    @board[key][index] = "O"
+  end
 end
-
-
-
-
-# def player_input(key, index)
-#   @board[key][index] = "X"
-# end
-#
-# def computer_piece(key, index)
-#   @board[key][index] = "O"
-# end
