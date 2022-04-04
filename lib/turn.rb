@@ -1,5 +1,3 @@
-# something got messed up here. It used to run so that all pieces stacked vertically each time you added a letter.
-
 # need to makes tests
 
 # make players take turns
@@ -25,9 +23,9 @@ class Turn
         @board.board[:row1][0] = "X"
         @board.print_board
 
-        elsif @board.board[:row2][0] == "."
-          @board.board[:row2][0] = "X"
-          @board.print_board
+      elsif @board.board[:row2][0] == "."
+        @board.board[:row2][0] = "X"
+        @board.print_board
 
       elsif @board.board[:row3][0] == "."
         @board.board[:row3][0] = "X"
@@ -48,9 +46,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "B"
+    elsif player_input.upcase == "B"
 
       if @board.board[:row1][1] == "."
         @board.board[:row1][1] = "X"
@@ -79,9 +76,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "C"
+    elsif player_input.upcase == "C"
 
       if @board.board[:row1][2] == "."
         @board.board[:row1][2] = "X"
@@ -110,9 +106,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "D"
+    elsif player_input.upcase == "D"
 
       if @board.board[:row1][3] == "."
         @board.board[:row1][3] = "X"
@@ -141,9 +136,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "E"
+    elsif player_input.upcase == "E"
 
       if @board.board[:row1][4] == "."
         @board.board[:row1][4] = "X"
@@ -172,9 +166,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "F"
+    elsif player_input.upcase == "F"
 
       if @board.board[:row1][5] == "."
         @board.board[:row1][5] = "X"
@@ -203,9 +196,8 @@ class Turn
       else
         puts "Column is full. Please choose another column."
       end
-    end
 
-    if player_input.upcase == "G"
+    elsif player_input.upcase == "G"
 
       if @board.board[:row1][6] == "."
         @board.board[:row1][6] = "X"
