@@ -15,21 +15,20 @@ RSpec.describe Turn do
   end
 
   it "can take player input" do
-    input = @turn.player_input # we put this here because when we put input in 'before:each', it asks for player input twice instead of once
+    input = @turn.player_input # We put this here because when we put input in 'before:each', it asks for player input twice instead of once.
 
     expect(input).to eq("A")
   end
 
-  it "can replace availble spot with player's piece " do
+  xit "can replace availble spot with player's piece " do
     input = @turn.player_input
 
     expect().to eq("A")
   end
 
-  it "can check in all columns respond to player input" do
+  xit "can check in all columns respond to player input" do
     input = @turn.player_input
 
     expect()
   end
-
 end
