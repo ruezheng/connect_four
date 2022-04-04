@@ -6,10 +6,14 @@ puts "Welcome to Connect Four! You must connect 4 of your pieces (in any directi
 
 board = Board.new()
 puts board.print_board
-turn = Turn.new(board)
+# turn = Turn.new(board)
 
 while true
+  turn = Turn.new(board)
   turn.place_piece
+  # game.has_won?
+  # turn = Turn.new(board)
+  # turn.computer_place_piece
 end
 
 # game = Game.new

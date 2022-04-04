@@ -11,9 +11,11 @@ class Turn
   end
 
   def place_piece
+    input = player_input.upcase
+    # require 'pry';binding.pry
 
-    if player_input.upcase == "A"
-
+    if input == "A"
+      # require 'pry';binding.pry
       if @board.board[:row1][0] == "."
         @board.board[:row1][0] = "X"
         @board.print_board
@@ -42,8 +44,8 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "B"
-
+    elsif input == "B"
+      # require'pry';binding.pry
       if @board.board[:row1][1] == "."
         @board.board[:row1][1] = "X"
         @board.print_board
@@ -72,9 +74,10 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "C"
+    elsif input == "C"
 
       if @board.board[:row1][2] == "."
+        @board.board[:row1][2] = "X"
         @board.print_board
 
       elsif @board.board[:row2][2] == "."
@@ -101,7 +104,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "D"
+    elsif input == "D"
 
       if @board.board[:row1][3] == "."
         @board.board[:row1][3] = "X"
@@ -131,9 +134,10 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "E"
+    elsif input == "E"
 
       if @board.board[:row1][4] == "."
+        @board.board[:row1][4] = 'X'
         @board.print_board
 
       elsif @board.board[:row2][4] == "."
@@ -160,7 +164,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "F"
+    elsif input == "F"
 
       if @board.board[:row1][5] == "."
         @board.board[:row1][5] = "X"
@@ -179,7 +183,7 @@ class Turn
         @board.print_board
 
       elsif @board.board[:row5][5] == "."
-        @board.board[:row5][3] = "X"
+        @board.board[:row5][5] = "X"
         @board.print_board
 
       elsif @board.board[:row6][5] == "."
@@ -190,7 +194,7 @@ class Turn
         puts "Column is full. Please choose another column."
       end
 
-    elsif player_input.upcase == "G"
+    elsif input == "G"
 
       if @board.board[:row1][6] == "."
         @board.board[:row1][6] = "X"
