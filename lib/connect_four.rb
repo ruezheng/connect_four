@@ -2,25 +2,32 @@ require 'pry'
 require './lib/board'
 require './lib/turn'
 
-puts "Welcome to Connect Four! You must connect 4 of your pieces (in any direction) to win the game. To play the game, enter a letter A-G and press 'Return' to place one of your pieces in a columm."
-
 board = Board.new()
-puts board.print_board
-# turn = Turn.new(board)
-
-while true
-  turn = Turn.new(board)
-  input = turn.player_input.upcase
-  turn.player_piece(input)
-
-  computer_input = turn.computer_input
-  turn.computer_piece
-
-  if turn.draw? == false
-    puts "Game is a draw. "
-    return
+puts "Welcome to Connect Four!".delete("")
+puts "Enter p to play. Enter q to quit".delete("")
+puts ">".delete("")
+start_value = gets.chomp
+if start_value == "p"
+  puts board.print_board
+  while true
+    turn = Turn.new(board)
+    input = turn.player_input.upcase
+    turn.player_piece(input)
+    # check if they have won
+    turn.computer_piece
+    # check if they have won
+    if turn.draw? == false
+      puts "Game is a draw. "
+      return
+    end
   end
+elsif start_value == p
+  puts "We wish you would enter p or q."
+    return
 end
+
+
+
 
 
 
