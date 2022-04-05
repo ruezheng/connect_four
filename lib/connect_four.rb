@@ -15,6 +15,11 @@ while true
 
   computer_input = turn.computer_input
   turn.computer_piece
+
+  if turn.draw? == false
+    puts "Game is a draw. "
+    return
+  end
 end
 
 

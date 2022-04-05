@@ -9,13 +9,25 @@ class Turn
     return STDIN.gets.chomp
   end
 
-  def player_piece(input)
-    input = player_input.upcase
+  def invalid_choice
+    # until  do
+    #   5.times
+      puts "We told you A-G. Try again!"
+      player_piece(gets.chomp.upcase)
+    # end
+    # puts "SERIOUSLY WE MEAN A-G"
+  end
 
-    until (input == "A" or input == "B" or input == "C" or input == "D" or input == "E" or input == "F" or input == "G")
-        puts "Please enter a 1 or 2."
-        # return STDIN.gets.chomp
-    end
+  def another_choice
+      puts "Column is full. Please choose another column"
+      player_piece(gets.chomp.upcase)
+  end
+
+  def draw?
+    @board.board[:row6].include?(".")
+  end
+
+  def player_piece(input)
 
     if input == "A"
       if @board.board[:row1][0] == "."
@@ -43,7 +55,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "B"
@@ -72,7 +84,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "C"
@@ -102,7 +114,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "D"
@@ -132,7 +144,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "E"
@@ -162,7 +174,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "F"
@@ -192,7 +204,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        another_choice
       end
 
     elsif input == "G"
@@ -221,18 +233,22 @@ class Turn
         @board.board[:row6][6] = "X"
         @board.print_board
 
-      else
-        puts "Column is full. Please choose another column."
+      elsif
+        another_choice
       end
 
-    elsif input
-
-      puts "We told you A-G. Try again!"
-    end
+      else
+        invalid_choice
+      end
   end
 
   def computer_input
     @possible_input = (%w(A B C D E F G)).sample
+  end
+
+  def invalid_computer_choice
+    # puts "redo"
+    computer_piece
   end
 
   def computer_piece
@@ -263,7 +279,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "B"
@@ -292,7 +308,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "C"
@@ -322,7 +338,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "D"
@@ -352,13 +368,13 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "E"
 
       if @board.board[:row1][4] == "."
-        @board.board[:row1][4] = 'X'
+        @board.board[:row1][4] = 'O'
         @board.print_board
 
       elsif @board.board[:row2][4] == "."
@@ -382,7 +398,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "F"
@@ -412,7 +428,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
 
     elsif computer_input == "G"
@@ -442,7 +458,7 @@ class Turn
         @board.print_board
 
       else
-        puts "Column is full. Please choose another column."
+        invalid_computer_choice
       end
     end
   end
