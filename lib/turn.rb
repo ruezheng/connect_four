@@ -11,13 +11,22 @@ class Turn
     return STDIN.gets.chomp
   end
 
-  def horizontal_win
+  def player_horizontal_win
     @board.board.values.each do |inputs|
       switch = inputs.join("")
       if switch.include?("XXXX")
         return true
-      elsif switch.include?("OOOO")
-        return true
+      # elsif switch.include?("OOOO")
+      #   return true
+      end
+    end
+  end
+
+  def computer_horizontal_win
+    @board.board.values.each do |inputs|
+      switch = inputs.join("")
+      if switch.include?("OOOO")
+       return true
       end
     end
   end

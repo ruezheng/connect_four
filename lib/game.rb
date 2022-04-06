@@ -15,17 +15,21 @@ class Game
       while true
         loop do
           turn.player_piece(gets.chomp.upcase)
-          turn.horizontal_win
+          turn.player_horizontal_win
           sleep(1)
           turn.computer_piece
+          turn.computer_horizontal_win
           break
         end
 
         if turn.draw? == false
           puts "It's a draw! ༼ つ ◕_◕ ༽つ Enter 'ruby ./lib/connect_four.rb' to play again!"
           return
-        elsif turn.check_player_diagonal_win == true
+        elsif turn.player_horizontal_win == true
           puts "The game is over! You have beaten your computer overlords, good job!"
+          return
+        elsif turn.computer_horizontal_win == true
+          puts "The game is over! You have lost to your computer overlords! Muhahaha!"
           return
         end
       end

@@ -20,7 +20,7 @@ RSpec.describe Turn do
     expect(@board.board[:row1][0]).to eq "X"
   end
 
-  it "will return only letters A-G" do
+  xit "will return only letters A-G" do
     expect(@turn.computer_input).to eq("A").or eq("B").or eq("C").or eq("D").or eq("E").or eq("F").or eq("G")
   end
 
@@ -37,8 +37,17 @@ RSpec.describe Turn do
     @turn.player_piece("D")
     @turn.player_piece("E")
     @turn.player_piece("F")
-    @turn.horizontal_win
+    @turn.player_horizontal_win
     # binding.pry
-    expect(@turn.horizontal_win).to eq true
+    expect(@turn.player_horizontal_win).to eq true
+  end
+
+  xit "can determine a computer win" do # similar to our test before, in order to test CPU input we must hard code the input.
+    @turn.computer_piece("A")# to do so you must un # the (input) on line 288
+    @turn.computer_piece("B")# once doing this # out the computer_input method or it will be random
+    @turn.computer_piece("C")# using the # then
+    @turn.computer_piece("D")
+    @turn.computer_horizontal_win
+    expect(@turn.computer_horizontal_win).to eq true
   end
 end
