@@ -1,13 +1,42 @@
 class Turn
-  attr_accessor :turn, :board
+  attr_accessor :turn, :board, :player_win, :computer_win
 
   def initialize(board)
     @board = board
+    @player_win = false
+    @computer_win = false
   end
 
   def player_input
     return STDIN.gets.chomp
   end
+
+  def horizontal_win
+    @board.board.values.each do |inputs|
+      switch = inputs.join("")
+      if switch.include?("XXXX")
+        return true
+      elsif switch.include?("OOOO")
+        return true
+      end
+    end
+  end
+
+      # if @board.board[:row1].include?('"X","X","X","X"')
+      #   @player_win = true
+      # elsif @board.board[:row2].include?('"X","X","X","X"')
+      #   @player_win = true
+      # elsif @board.board[:row3].include?('"X","X","X","X"')
+      #   @player_win = true
+      # elsif @board.board[:row4].include?('"X","X","X","X"')
+      #   @player_win = true
+      # elsif @board.board[:row5].include?('"X","X","X","X"')
+      #   @player_win = true
+      # elsif @board.board[:row6].include?('"X","X","X","X"')
+      #   @player_win = true
+      # else
+      #   @player_win
+
 
   def invalid_choice
     puts "We told you A-G. Try again!"
@@ -238,16 +267,16 @@ class Turn
     end
   end
 
-  # def computer_input
-  #   @possible_input = (%w(A B C D E F G)).sample
-  # end
+  def computer_input
+    @possible_computer_input = (%w(A B C D E F G)).sample
+  end
 
   def invalid_computer_choice
     # puts "redo"
     computer_piece
   end
 
-  def computer_piece
+  def computer_piece#(input)
     @possible_input = (%w(A B C D E F G)).sample
     computer_input = @possible_input
     if computer_input == "A"

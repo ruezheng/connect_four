@@ -24,8 +24,21 @@ RSpec.describe Turn do
     expect(@turn.computer_input).to eq("A").or eq("B").or eq("C").or eq("D").or eq("E").or eq("F").or eq("G")
   end
 
-  it "computer can place a piece 'O' in available spot" do
-    @turn.computer_piece("B")
-    expect(@board.board[:row1][1]).to eq "O"
+  xit "computer can place a piece 'O' in available spot" do # this test require hardcoded computer input in order to place a piece
+    @turn.computer_piece("G") # if you would like to test, make all of line 278 runnable code, and # out lines 279 and 280
+    # binding.pry
+    expect(@board.board[:row1][6]).to eq "O"
+  end
+
+  it "can determine a players horizontal win" do
+    @player_win = false
+    @computer_win = false
+    @turn.player_piece("C")
+    @turn.player_piece("D")
+    @turn.player_piece("E")
+    @turn.player_piece("F")
+    @turn.horizontal_win
+    # binding.pry
+    expect(@turn.horizontal_win).to eq true
   end
 end
