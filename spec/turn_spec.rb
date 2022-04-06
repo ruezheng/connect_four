@@ -21,12 +21,14 @@ RSpec.describe Turn do
   end
 
   it "will return only letters A-G" do
+    @possible_input = (%w(A B C D E F G)).sample# method used within computer_piece for random choice
+    computer_input = @possible_input # method used within computer_piece for random choice
 
-    expect(@turn.computer_input).to eq("A").or eq("B").or eq("C").or eq("D").or eq("E").or eq("F").or eq("G")
+    expect(computer_input).to eq("A").or eq("B").or eq("C").or eq("D").or eq("E").or eq("F").or eq("G")
   end
 
-  xit "computer can place a piece 'O' in available spot" do # this test require hardcoded computer input in order to place a piece
-    @turn.computer_piece("G") # if you would like to test, make all of line 278 runnable code, and # out lines 279 and 280
+  xit "computer can place a piece 'O' in available spot" do
+    @turn.computer_piece("G")
 
     expect(@board.board[:row1][6]).to eq "O"
   end
@@ -37,8 +39,29 @@ RSpec.describe Turn do
     @turn.player_piece("E")
     @turn.player_piece("F")
     @turn.player_horizontal_win
-    binding.pry
+    # binding.pry
     expect(@turn.player_horizontal_win).to eq true
+  end
+
+  xit "can determine a computer horizontal win" do
+    @turn.computer_piece("A")
+    @turn.computer_piece("B")
+    @turn.computer_piece("C")
+    @turn.computer_piece("D")
+    @turn.computer_horizontal_win
+
+    expect(@turn.computer_horizontal_win).to eq true
+  end
+
+  it "can determine a players vertical win" do
+    @turn.player_piece("C")
+    @turn.player_piece("C")
+    @turn.player_piece("C")
+    @turn.player_piece("C")
+    # require 'pry';binding.pry
+    @turn.player_vertical_win
+    # binding.pry
+    expect(@turn.player_vertical_win).to eq true
   end
 
   xit "can determine a computer horizontal win" do # similar to our test before, in order to test CPU input we must hard code the input.
@@ -47,7 +70,6 @@ RSpec.describe Turn do
     @turn.computer_piece("C")# using the # then
     @turn.computer_piece("D")
     @turn.computer_horizontal_win
-
-    expect(@turn.computer_horizontal_win).to eq true
+    expect(@turn.computer_vertical_win).to eq true
   end
 end

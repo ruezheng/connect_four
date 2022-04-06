@@ -1,10 +1,9 @@
 class Turn
-  attr_accessor :turn, :board, :player_win, :computer_win
+  attr_accessor :turn, :board, :player_vertical_win
 
   def initialize(board)
     @board = board
-    @player_win = false
-    @computer_win = false
+    @player_vertical_win = false
   end
 
   def player_input
@@ -20,10 +19,156 @@ class Turn
     end
   end
 
-  # def player_vertical_win
-  #   @board.board.values.each do |inputs|
-  #   end
-  # end
+  def player_vertical_win
+    # require 'pry';binding.pry
+    vertical_check_a = []
+      vertical_check_a << @board.board.values[0][0]
+      vertical_check_a << @board.board.values[1][0]
+      vertical_check_a << @board.board.values[2][0]
+      vertical_check_a << @board.board.values[3][0]
+      vertical_check_a << @board.board.values[4][0]
+      vertical_check_a << @board.board.values[5][0]
+      string_vert_a = vertical_check_a.join("")
+    vertical_check_b = []
+      vertical_check_b << @board.board.values[0][1]
+      vertical_check_b << @board.board.values[1][1]
+      vertical_check_b << @board.board.values[2][1]
+      vertical_check_b << @board.board.values[3][1]
+      vertical_check_b << @board.board.values[4][1]
+      vertical_check_b << @board.board.values[5][1]
+      string_vert_b = vertical_check_b.join("")
+    vertical_check_c = []
+      vertical_check_c << @board.board.values[0][2]
+      vertical_check_c << @board.board.values[1][2]
+      vertical_check_c << @board.board.values[2][2]
+      vertical_check_c << @board.board.values[3][2]
+      vertical_check_c << @board.board.values[4][2]
+      vertical_check_c << @board.board.values[5][2]
+      string_vert_c = vertical_check_c.join("")
+    vertical_check_d = []
+      vertical_check_d << @board.board.values[0][3]
+      vertical_check_d << @board.board.values[1][3]
+      vertical_check_d << @board.board.values[2][3]
+      vertical_check_d << @board.board.values[3][3]
+      vertical_check_d << @board.board.values[4][3]
+      vertical_check_d << @board.board.values[5][3]
+      string_vert_d = vertical_check_d.join("")
+    vertical_check_e = []
+      vertical_check_e << @board.board.values[0][4]
+      vertical_check_e << @board.board.values[1][4]
+      vertical_check_e << @board.board.values[2][4]
+      vertical_check_e << @board.board.values[3][4]
+      vertical_check_e << @board.board.values[4][4]
+      vertical_check_e << @board.board.values[5][4]
+      string_vert_e = vertical_check_e.join("")
+    vertical_check_f = []
+      vertical_check_f << @board.board.values[0][5]
+      vertical_check_f << @board.board.values[1][5]
+      vertical_check_f << @board.board.values[2][5]
+      vertical_check_f << @board.board.values[3][5]
+      vertical_check_f << @board.board.values[4][5]
+      vertical_check_f << @board.board.values[5][5]
+      string_vert_f = vertical_check_f.join("")
+    vertical_check_g = []
+      vertical_check_g << @board.board.values[0][6]
+      vertical_check_g << @board.board.values[1][6]
+      vertical_check_g << @board.board.values[2][6]
+      vertical_check_g << @board.board.values[3][6]
+      vertical_check_g << @board.board.values[4][6]
+      vertical_check_g << @board.board.values[5][6]
+      string_vert_g = vertical_check_g.join("")
+    if string_vert_a.include?("XXXX")
+      true
+    elsif string_vert_b.include?("XXXX")
+      true
+    elsif string_vert_c.include?("XXXX")
+      true
+    elsif string_vert_d.include?("XXXX")
+      true
+    elsif string_vert_e.include?("XXXX")
+      true
+    elsif string_vert_f.include?("XXXX")
+      true
+    elsif string_vert_g.include?("XXXX")
+      true
+    end
+  end
+
+  def computer_vertical_win
+    # require 'pry';binding.pry
+    vertical_check_a = []
+      vertical_check_a << @board.board.values[0][0]
+      vertical_check_a << @board.board.values[1][0]
+      vertical_check_a << @board.board.values[2][0]
+      vertical_check_a << @board.board.values[3][0]
+      vertical_check_a << @board.board.values[4][0]
+      vertical_check_a << @board.board.values[5][0]
+      string_vert_a = vertical_check_a.join("")
+    vertical_check_b = []
+      vertical_check_b << @board.board.values[0][1]
+      vertical_check_b << @board.board.values[1][1]
+      vertical_check_b << @board.board.values[2][1]
+      vertical_check_b << @board.board.values[3][1]
+      vertical_check_b << @board.board.values[4][1]
+      vertical_check_b << @board.board.values[5][1]
+      string_vert_b = vertical_check_b.join("")
+    vertical_check_c = []
+      vertical_check_c << @board.board.values[0][2]
+      vertical_check_c << @board.board.values[1][2]
+      vertical_check_c << @board.board.values[2][2]
+      vertical_check_c << @board.board.values[3][2]
+      vertical_check_c << @board.board.values[4][2]
+      vertical_check_c << @board.board.values[5][2]
+      string_vert_c = vertical_check_c.join("")
+    vertical_check_d = []
+      vertical_check_d << @board.board.values[0][3]
+      vertical_check_d << @board.board.values[1][3]
+      vertical_check_d << @board.board.values[2][3]
+      vertical_check_d << @board.board.values[3][3]
+      vertical_check_d << @board.board.values[4][3]
+      vertical_check_d << @board.board.values[5][3]
+      string_vert_d = vertical_check_d.join("")
+    vertical_check_e = []
+      vertical_check_e << @board.board.values[0][4]
+      vertical_check_e << @board.board.values[1][4]
+      vertical_check_e << @board.board.values[2][4]
+      vertical_check_e << @board.board.values[3][4]
+      vertical_check_e << @board.board.values[4][4]
+      vertical_check_e << @board.board.values[5][4]
+      string_vert_e = vertical_check_e.join("")
+    vertical_check_f = []
+      vertical_check_f << @board.board.values[0][5]
+      vertical_check_f << @board.board.values[1][5]
+      vertical_check_f << @board.board.values[2][5]
+      vertical_check_f << @board.board.values[3][5]
+      vertical_check_f << @board.board.values[4][5]
+      vertical_check_f << @board.board.values[5][5]
+      string_vert_f = vertical_check_f.join("")
+    vertical_check_g = []
+      vertical_check_g << @board.board.values[0][6]
+      vertical_check_g << @board.board.values[1][6]
+      vertical_check_g << @board.board.values[2][6]
+      vertical_check_g << @board.board.values[3][6]
+      vertical_check_g << @board.board.values[4][6]
+      vertical_check_g << @board.board.values[5][6]
+      string_vert_g = vertical_check_g.join("")
+    if string_vert_a.include?("OOOO")
+      true
+    elsif string_vert_b.include?("OOOO")
+      true
+    elsif string_vert_c.include?("OOOO")
+      true
+    elsif string_vert_d.include?("OOOO")
+      true
+    elsif string_vert_e.include?("OOOO")
+      true
+    elsif string_vert_f.include?("OOOO")
+      true
+    elsif string_vert_g.include?("OOOO")
+      true
+    end
+  end
+
 
   def computer_horizontal_win
     @board.board.values.each do |inputs|
@@ -32,10 +177,6 @@ class Turn
        return true
       end
     end
-  end
-
-  def player_vertical_win
-
   end
 
   def invalid_choice
