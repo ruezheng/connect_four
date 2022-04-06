@@ -1,21 +1,14 @@
 # require 'rspec'
-# require 'pry'
-# require './lib/board'
-# require './lib/player'
-# require './lib/turn'
-#
-# RSpec.describe Game do
-#
-#   before :each do
-#     @turn = Turn.new
-#     @player = Player.new
-#     @computer = Computer.new(Computer)
-#   end
-#
-#   it "exists" do
-#     expect(@game).to be_an_instance_of(Game)
-#   end
-#
-#
-#
-# end
+require 'pry'
+require './lib/board'
+require './lib/turn'
+require './lib/game'
+
+RSpec.describe Game do
+
+  it "exists" do
+    game = Game.new
+    
+    expect(game).to be_an_instance_of(Game)
+  end
+end
