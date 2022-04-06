@@ -16,11 +16,14 @@ class Turn
       switch = inputs.join("")
       if switch.include?("XXXX")
         return true
-      # elsif switch.include?("OOOO")
-      #   return true
       end
     end
   end
+
+  # def player_vertical_win
+  #   @board.board.values.each do |inputs|
+  #   end
+  # end
 
   def computer_horizontal_win
     @board.board.values.each do |inputs|
@@ -31,21 +34,9 @@ class Turn
     end
   end
 
-      # if @board.board[:row1].include?('"X","X","X","X"')
-      #   @player_win = true
-      # elsif @board.board[:row2].include?('"X","X","X","X"')
-      #   @player_win = true
-      # elsif @board.board[:row3].include?('"X","X","X","X"')
-      #   @player_win = true
-      # elsif @board.board[:row4].include?('"X","X","X","X"')
-      #   @player_win = true
-      # elsif @board.board[:row5].include?('"X","X","X","X"')
-      #   @player_win = true
-      # elsif @board.board[:row6].include?('"X","X","X","X"')
-      #   @player_win = true
-      # else
-      #   @player_win
+  def player_vertical_win
 
+  end
 
   def invalid_choice
     puts "We told you A-G. Try again!"
@@ -276,12 +267,7 @@ class Turn
     end
   end
 
-  def computer_input
-    @possible_computer_input = (%w(A B C D E F G)).sample
-  end
-
   def invalid_computer_choice
-    # puts "redo"
     computer_piece
   end
 

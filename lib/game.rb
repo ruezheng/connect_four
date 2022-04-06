@@ -10,7 +10,6 @@ class Game
     @player_win = false
     @computer_win = false
     if start_value == "p"
-      # input = turn.player_input.upcase
       puts board.print_board
       while true
         loop do
