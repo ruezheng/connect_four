@@ -25,6 +25,18 @@ class Board
     puts @board[:row1].join
   end
 
+  def print_computer_board
+    puts "-CPU TURN-"
+    columns = ["ABCDEFG"].join
+    puts columns.delete('"')
+    puts @board[:row6].join
+    puts @board[:row5].join
+    puts @board[:row4].join
+    puts @board[:row3].join
+    puts @board[:row2].join
+    puts @board[:row1].join
+  end
+
   def player_input(key, index)
     @board[key][index] = "X"
   end

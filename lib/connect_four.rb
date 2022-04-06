@@ -1,16 +1,14 @@
 require 'pry'
 require './lib/board'
 require './lib/turn'
-
-board = Board.new()
+require './lib/game'
 
 puts "Welcome to Connect Four! Enter p to play, then enter a letter A-G to place a piece. Enter q to quit.".delete("")
 
 # start_value = gets.chomp
-turn = Turn.new(board)
+game = Game.new()
 
-
-turn.start_game
+game.start_game
 
 
 
